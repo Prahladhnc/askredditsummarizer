@@ -28,10 +28,19 @@ POLAND_TZ = pytz.timezone("Europe/Warsaw")
 # =====================================================
 
 # Add your Gemini API keys here
+
+import os
+
 API_KEYS = [
-    "AIzaSyBit0TeESoPhJqVWh0-mWLuvZ9-2wNqfr0",
-    "AIzaSyB0wAh8HOvo1_KLDZHjTbLue2FQpjCKfcw",
-    "AIzaSyAk-tD-ZqK_CVOxZzXomq4XODzp6XzcQRY",
+    os.getenv("GEMINI_KEY_1"),
+    os.getenv("GEMINI_KEY_2"),
+    os.getenv("GEMINI_KEY_3"),
+    os.getenv("GEMINI_KEY_4")
+]
+
+API_KEYS = [
+    key for key in API_KEYS
+    if key
 ]
 
 MODEL_NAME = "gemini-2.5-flash-lite"
